@@ -23,7 +23,7 @@ import java.util.List;
  * </p>
  * <p>
  *     This interface extends the JpaRepository
- * </p>
+ * </p>z
  *
  * @author      Umesh M
  * @version     1.0
@@ -31,5 +31,5 @@ import java.util.List;
  */
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Long> {
-    public List<Patient> findByFirstName(String firstName);
+    public List<Patient> findByFirstNameContainingIgnoreCase(String firstName);
 }

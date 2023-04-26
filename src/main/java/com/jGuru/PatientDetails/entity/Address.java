@@ -12,6 +12,8 @@ import javax.persistence.*;
 @Builder
 public class Address {
 
+    public enum AddressType { PERMANENT, CURRENT};
+
     @Id
     @SequenceGenerator(
             name = "address_sequence",
@@ -27,4 +29,7 @@ public class Address {
     private String cityName;
     private String stateName;
     private Long pinCode;
+
+    @Enumerated(EnumType.STRING)
+    private AddressType addressType;
 }

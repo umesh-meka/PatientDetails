@@ -98,7 +98,7 @@ class PatientRepositoryTest {
     @Test
     public void givenPatientName_whenGetPatientsByName_thenReturnPatientsList() {
 
-        List<Patient> patientList = patientRepository.findByFirstName("Patient1RepoTest");
+        List<Patient> patientList = patientRepository.findByFirstNameContainingIgnoreCase("Patient1RepoTest");
 
         assertEquals(1, patientList.size());
     }

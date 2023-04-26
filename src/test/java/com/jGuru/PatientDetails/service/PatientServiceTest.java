@@ -199,7 +199,7 @@ class PatientServiceTest {
                 .telNumber(1234567890L)
                 .build();
 
-        given(patientRepository.findByFirstName(patientName)).willReturn(List.of(patient,patient1));
+        given(patientRepository.findByFirstNameContainingIgnoreCase(patientName)).willReturn(List.of(patient,patient1));
 
         // when -  action or the behaviour that we are going test
         List<Patient> patientList = patientServiceImpl.findAllPatientsByName(patientName);
@@ -215,7 +215,7 @@ class PatientServiceTest {
     public void givenEmptyPatientsList_whenGetAllPatientsByName_thenReturnEmptyPatientsList(){
         // given - precondition or setup
         String patientName = "NoName";
-        given(patientRepository.findByFirstName(patientName)).willReturn(Collections.emptyList());
+        given(patientRepository.findByFirstNameContainingIgnoreCase(patientName)).willReturn(Collections.emptyList());
 
         // when -  action or the behaviour that we are going test
         List<Patient> patientList = patientServiceImpl.findAllPatientsByName(patientName);

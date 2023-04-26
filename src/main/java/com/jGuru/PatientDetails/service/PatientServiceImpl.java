@@ -74,7 +74,7 @@ public class PatientServiceImpl implements PatientService {
      */
     @Override
     public List<Patient> findAllPatientsByName(String firstName) {
-        return patientRepository.findByFirstName(firstName);
+        return patientRepository.findByFirstNameContainingIgnoreCase(firstName);
     }
 
     /**
