@@ -1,6 +1,6 @@
 "save patient input"
 
-"{
+{
     "firstName" : "Ramesh",
     "lastName" : "Kumar",
     "dob" : "2002-02-02",
@@ -21,4 +21,4 @@
 		}
 	],
     "telNumber" : 8712355555
-}"
+}
